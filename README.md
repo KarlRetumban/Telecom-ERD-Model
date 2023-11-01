@@ -234,7 +234,7 @@ COMMIT;
 
 ### Data View
 #### Subscriber
-![alt text](https://github.com/KarlRetumban/samp/blob/main/subscriber.PNG)
+![alt text](https://github.com/KarlRetumban/samp/blob/main/subsciber.PNG)
 
 #### Plan
 ![alt text](https://github.com/KarlRetumban/samp/blob/main/plan.PNG)
@@ -261,4 +261,34 @@ COMMIT;
 ![alt text](https://github.com/KarlRetumban/samp/blob/main/sms.PNG)
 
 #### Data 
-![alt text](https://github.com/KarlRetumban/samp/blob/main/datanet.PNG)
+![alt text](https://github.com/KarlRetumban/samp/blob/main/data.PNG)
+
+
+### Queries
+1. This query returns the list of subscribers and the corresponding mobile plan they availed. 
+~~~sql
+SELECT s.subscriber_id, s.firstname, s.lastname, c.phone_num, n.plan_id, n.plan_name
+FROM subscriber AS s
+INNER JOIN contract AS c ON s.subscriber_id = c.subscriber_id
+INNER JOIN plan AS n ON c.plan_id = n.plan_id;
+~~~
+
+2. This query returns the contract details and the type of sim card issued in the contract.
+~~~sql
+SELECT c.contract_id, c.plan_id, c.contractdate_start, c.contractdate_end, 
+ b.phone_num, b.simcard_type
+FROM contract as c
+LEFT OUTER JOIN phonenumber as b ON c.phone_num = b.phone_num;
+~~~
+
+3. This query returns all the subscribers whose data usage exceeds 5000MB. 
+~~~sql
+SELECT c.plan_id, c.subscriber_id, c.phone_num, SUM(d.usage_mb) AS usage_mb
+FROM contract AS C
+INNER JOIN calls AS c2 ON c.phone_num = c2.phone_num
+LEFT JOIN SMS ON c.phone_num = SMS.phone_num
+LEFT JOIN datanet AS d ON c.phone_num = d.phone_num
+GROUP BY c.phone_num, c.plan_id, c.subscriber_id
+HAVING SUM(usage_mb) > 5000;
+
+~~~
