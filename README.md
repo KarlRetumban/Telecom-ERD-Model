@@ -1,6 +1,6 @@
 # Telecom ERD
 
-## Description of the Use Case
+### Description of the Use Case
 The telecommunications industry is one of the industries where it uses intensive data. It 
 stores massive amounts of data from like its customers and subscribers, their calls, SMS, and 
 data usage among others. Hence a proper and efficient data management system is needed in 
@@ -13,3 +13,8 @@ discuss the ER Model Diagram particularly the relationship among entities, the c
 connectivity, specialization hierarchies, and other entity relationships.
 
 ![alt text](https://github.com/KarlRetumban/samp/blob/main/ERD_Telecom.PNG)
+
+
+### Normalization
+All entities in the Mobile Segment Plan ER Model Diagram are in Third Normal Form. There are 
+no repeating groups in the table, no partial dependencies, and no transitive dependencies.
