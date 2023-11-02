@@ -12,7 +12,7 @@ Postgresql and pgAdmin as the tool of choice for development and implementation.
 discuss the ER Model Diagram particularly the relationship among entities, the cardinality, 
 connectivity, specialization hierarchies, and other entity relationships.
 
-![alt text](https://github.com/KarlRetumban/Sample1/blob/main/ERD_Telecom.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/ERD_Telecom.PNG)
 
 
 ### Normalization
