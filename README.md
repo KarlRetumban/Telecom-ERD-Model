@@ -234,7 +234,7 @@ COMMIT;
 
 ### Data View
 #### Subscriber
-![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/subsciber.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/subscriber.PNG)
 
 #### Plan
 ![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/plan.PNG)
