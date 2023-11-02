@@ -12,7 +12,7 @@ Postgresql and pgAdmin as the tool of choice for development and implementation.
 discuss the ER Model Diagram particularly the relationship among entities, the cardinality, 
 connectivity, specialization hierarchies, and other entity relationships.
 
-![alt text](https://github.com/KarlRetumban/samp/blob/main/ERD_Telecom.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/ERD_Telecom.PNG)
 
 
 ### Normalization
@@ -234,34 +234,34 @@ COMMIT;
 
 ### Data View
 #### Subscriber
-![alt text](https://github.com/KarlRetumban/samp/blob/main/subsciber.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/subsciber.PNG)
 
 #### Plan
-![alt text](https://github.com/KarlRetumban/samp/blob/main/plan.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/plan.PNG)
 
 #### Contract
-![alt text](https://github.com/KarlRetumban/samp/blob/main/contract.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/contract.PNG)
 
 #### Device 
-![alt text](https://github.com/KarlRetumban/samp/blob/main/device.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/device.PNG)
 
 #### Handset
-![alt text](https://github.com/KarlRetumban/samp/blob/main/handset.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/handset.PNG)
 
 #### Tablet
-![alt text](https://github.com/KarlRetumban/samp/blob/main/tablet.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/tablet.PNG)
 
 #### Phone Number
-![alt text](https://github.com/KarlRetumban/samp/blob/main/phonenumber.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/phonenumber.PNG)
 
 #### Calls 
-![alt text](https://github.com/KarlRetumban/samp/blob/main/calls.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/calls.PNG)
 
 #### SMS
-![alt text](https://github.com/KarlRetumban/samp/blob/main/sms.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/sms.PNG)
 
 #### Data 
-![alt text](https://github.com/KarlRetumban/samp/blob/main/data.PNG)
+![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/data.PNG)
 
 
 ### Queries
