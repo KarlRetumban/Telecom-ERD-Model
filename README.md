@@ -1,16 +1,8 @@
-# Telecom ERD
+# Telecom ERD Model
+The tool used is pgAdmin and Lucidchart for ERD diagram.
 
 ### Description of the Use Case
-The telecommunications industry is one of the industries where it uses intensive data. It 
-stores massive amounts of data from like its customers and subscribers, their calls, SMS, and 
-data usage among others. Hence a proper and efficient data management system is needed in 
-order to effectively manage these data and deliver better service and customer satisfaction.
-In this project, we consider the Mobile Segment Plan of a Telecommunications company. 
-We designed a database system containing key data entities under the Mobile Segment Plan
-involving customer data, mobile plan, call activities and usage. We implemented this using 
-Postgresql and pgAdmin as the tool of choice for development and implementation. We will also 
-discuss the ER Model Diagram particularly the relationship among entities, the cardinality, 
-connectivity, specialization hierarchies, and other entity relationships.
+The telecommunications industry is one of the industries where it uses intensive data. It stores massive amounts of data from its customers and subscribers, their calls, SMS, and data usage among others. Hence a proper and efficient data management system is needed in order to effectively manage these data and deliver better service and customer satisfaction. In this project, we consider the Mobile Segment Plan of a Telecommunications company. We designed a database system containing key data entities under the Mobile Segment Plan involving customer data, mobile plan, call activities and usage. We implemented this using Postgresql, with pgAdmin as the tool of choice for development and implementation. We will also discuss the ER Model Diagram particularly the relationship among entities, the cardinality, connectivity, specialization hierarchies, and other entity relationships.
 
 ![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/ERD_Telecom.PNG)
 
@@ -231,6 +223,7 @@ FROM 'C:/Program Files/PostgreSQL/15/data/DATANET.csv' ( FORMAT CSV, DELIMITER('
 COMMIT;
 
 ~~~~
+____________________________
 
 ### Data View
 #### Subscriber
@@ -263,6 +256,106 @@ COMMIT;
 #### Data 
 ![alt text](https://github.com/KarlRetumban/Sample1/blob/main/images/data.PNG)
 
+__________________________
+
+### Relationships, Cardinality, Connectivity, Participation
+Below shows the details of the ER Model Diagram for Mobile Plan Segment. More specifically, it 
+shows the participating entities, relationship strength & participation, cardinality, and connectivity.
+
+##### 1. SUBSCRIBER – CONTRACT (One to Many)
+A subscriber can have one or multiple mobile plan contracts, but each mobile plan 
+contract only belongs to one customer or subscriber.
+
+* Participating Entities: Subscriber, Contract
+* Cardinality: Subscriber has a One-to-Many relationship with Contract
+* Connectivity: Subscriber has a One-to-Many relationship with Contract
+* Relationship Participation: Mandatory
+* Relationship Strength: Strong
+
+##### 2. PLAN – CONTRACT (One to Many)
+A mobile plan can be in one or multiple contracts, but each contract is associated to one 
+specific mobile plan only.
+
+* Participating Entities: Plan, Contract
+* Cardinality: Plan has a One-to-Many relationship with Contract
+* Connectivity: Plan has a One-to-Many relationship with Contract
+* Participating Relationship: Mandatory
+* Relationship Strength: Strong
+
+##### 3. CONTRACT - DEVICE (One-to-One/Optional)
+A mobile plan contract can issue zero or one device (if subscriber chooses too), but 
+each device is associated with one contract only.
+
+* Participating Entities: Contract, Device
+* Cardinality: Contract has a One-to-One but optional relationship with Device
+* Connectivity: Contract has a One-to-One but optional relationship with Device
+* Participating Relationship: Optional
+* Relationship Strength: Weak
+
+##### 4. DEVICE - HANDSET (One-to-One)
+A Device is associated with one and only Handset and vice versa. Device and Handset 
+are part of an inheritance or specialization hierarchy. Device is the supertype while 
+Handset is the subtype.
+
+* Participating Entities: Device, Handset
+* Cardinality: Device has a One-to-One relationship with Handset
+* Connectivity: Device has a One-to-One relationship with Handset
+* Participating Relationship: Mandatory
+* Relationship Strength: Strong
+
+##### 5. DEVICE - TABLET (One-to-One)
+A Device is associated with one and only Tablet and vice versa. Device and Tablet are 
+part of an inheritance or specialization hierarchy. Device is the supertype while Tablet is 
+the subtype.
+
+* Participating Entities: Device, Handset
+* Cardinality: Every Device is associated to one and only one Handset
+* Connectivity: Device has a One-to-One relationship with Handset
+* Participating Relationship: Mandatory
+* Relationship Strength: Strong
+
+##### 6. CONTRACT - PHONENUMBER (One-to-One)
+A Contract is tied with one Phone Number and each Phone Number is also associated 
+with one Contract only.
+
+* Participating Entities: Contract, Phonenumber
+* Cardinality: Every Contract is associated to one and only one Phone Number
+* Connectivity: Contract has a One-to-One relationship with PhoneNumber
+* Participating Relationship: Mandatory
+* Relationship Strength: Strong
+
+##### 7. PHONENUMBER – CALLS (One-to-Many/Optional)
+A Phone Number can have zero, one or multiple Calls, but each Calls is associated with 
+one Phone Number only.
+
+* Participating Entities: Phonenumber, Calls
+* Cardinality: Phonenumber has a One-to-Many but Optional relationship with Calls
+* Connectivity: Phonenumber has a One-to-Many but Optional relationship with Calls
+* Participating Relationship: Optional
+* Relationship Strength: Weak
+
+##### 8. PHONENUMBER – SMS (One-to-Many/Optional)
+A Phone Number can have zero, one or multiple SMS, but each SMS is associated with 
+one Phone Number only.
+
+* Participating Entities: Phonenumber, SMS
+* Cardinality: Phonenumber has a One-to-Many but Optional relationship with SMS
+* Connectivity: Phonenumber has a One-to-Many but Optional relationship with SMS
+* Participating Relationship: Optional
+* Relationship Strength: Weak
+
+##### 9. PHONENUMBER – DATANET (One-to-Many/Optional)
+A Phone Number is associated with zero, one or multiple Data Usage, but each Data 
+Usage is associated with one Phone Number only.
+
+* Participating Entities: Phonenumber, Datanet
+* Cardinality: Phonenumber has a One-to-Many but Optional relationship with Datanet
+* Connectivity: Phonenumber has a One-to-Many but Optional relationship with Datanet
+* Participating Relationship: Optional
+* Relationship Strength: Weak
+
+
+___________________
 
 ### Queries
 1. This query returns the list of subscribers and the corresponding mobile plan they availed. 
